@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>⚙️ Zsh Mastery Academy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ══════════════ SIDEBAR ══════════════ -->
+  <aside id="sidebar">
+
+    <!-- Head -->
+    <div class="sb-head">
+      <div class="sb-logo">
+        <span>%</span> <span class="sb-logo-text">zsh-academy</span>
+      </div>
+      <div class="sb-sub">Zero → Expert Mastery</div>
+      <div class="sb-controls">
+        <button class="sb-btn active" id="btn-pin-sidebar">📌 Pinned</button>
+        <button class="sb-btn" id="btn-hide-sidebar">✕ Hide</button>
+      </div>
+    </div>
+
+    <!-- Progress Ring -->
+    <div class="progress-ring-wrap">
+      <div class="ring-container">
+        <svg class="ring-svg" viewBox="0 0 80 80">
+          <circle class="ring-track" cx="40" cy="40" r="35"/>
+          <circle class="ring-fill"  cx="40" cy="40" r="35" id="ring-fill"/>
+        </svg>
+        <div class="ring-pct" id="ring-pct">0%</div>
+      </div>
+      <div class="ring-label" id="ring-label">0 of 7 levels<br>complete</div>
+      <div class="ring-bar-wrap">
+        <div class="ring-bar-track">
+          <div class="ring-bar-fill" id="ring-bar-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nav -->
+    <nav class="sb-nav" id="sb-nav">
+      <!-- Populated by script.js buildSidebar() -->
+    </nav>
+
+    <!-- Certificate link -->
+    <div style="padding:0.5rem 0.9rem;border-top:1px solid var(--border);flex-shrink:0">
+      <button
+        id="cert-sb-link"
+        onclick="showCertificate()"
+        style="width:100%;background:none;border:1px solid var(--border2);border-radius:5px;
+               padding:0.45rem 0.8rem;cursor:pointer;color:var(--text-dimmer);font-size:0.78rem;
+               display:flex;align-items:center;gap:8px;font-family:var(--sans);transition:all 0.15s"
+        onmouseover="this.style.borderColor='#f0883e';this.style.color='#f0883e'"
+        onmouseout="this.style.borderColor='var(--border2)';this.style.color='var(--text-dimmer)'">
+        🏆 <span>Course Certificate</span>
+      </button>
+    </div>
+
+    <!-- Footer branches -->
+    <div class="sb-footer">
+      <span class="sb-branch-tag" style="color:#3fb950">⚡ Foundation</span>
+      <span class="sb-branch-tag" style="color:#58a6ff">⚙️ Engineering</span>
+      <span class="sb-branch-tag" style="color:#ff7b72">🛡️ Pentest</span>
+    </div>
+
+  </aside>
+
+  <!-- ══════════════ MAIN ══════════════ -->
+  <div id="main">
+
+    <!-- Topbar -->
+    <div id="topbar">
+      <button id="sidebar-open-btn" onclick="
+        document.getElementById('sidebar').classList.remove('hidden');
+        document.body.classList.remove('sidebar-hidden');
+        this.style.display='none';
+        document.getElementById('sidebar').classList.toggle('mobile-open')
+      ">☰</button>
+
+      <nav class="breadcrumb" id="breadcrumb">
+        <span class="crumb-link" onclick="showHome()">zsh-academy</span>
+      </nav>
+
+      <span class="kbd">Esc</span>
+    </div>
+
+    <!-- Content wrapper -->
+    <div id="content">
+
+      <!-- HOME PAGE -->
+      <div id="page-home">
+        <!-- Rendered by renderHome() -->
+      </div>
+
+      <!-- TOPIC PAGE -->
+      <div id="page-topic">
+        <!-- Rendered by renderTopic() -->
+      </div>
+
+      <!-- CERTIFICATE PAGE -->
+      <div id="page-certificate">
+        <!-- Rendered by renderCertificate() -->
+      </div>
+
+    </div><!-- /content -->
+
+    <!-- Footer -->
+    <div id="footer">
+      <span>Zsh Mastery Academy — Built for operators who document their tools</span>
+      <span style="font-family:monospace;color:var(--text-dimmer)">% echo $ZSH_VERSION</span>
+    </div>
+
+  </div><!-- /main -->
+
+</div><!-- /app -->
+
+<!-- Quiz Modal -->
+<div id="quiz-overlay" onclick="if(event.target===this)closeQuiz()">
+  <div id="quiz-modal">
+    <!-- Rendered dynamically -->
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
