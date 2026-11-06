@@ -1900,7 +1900,8 @@ function renderCertificate() {
           <div class="cert-divider"></div>
           <div class="cert-certifies">This certifies that</div>
           <div class="cert-name" id="cert-display-name">${escHtml(name)}</div>
-          <div class="cert-desc">has successfully completed the Zsh Mastery Academy curriculum, demonstrating proficiency in Zsh shell scripting from terminal fundamentals through professional pentest automation tooling.</div>
+          <div class="cert-desc">has completed the seven-level Zsh Mastery Academy learning path, covering shell fundamentals, scripting, and security-automation topics.</div>
+          <div class="cert-disclaimer">Independent learning record — not an accredited qualification or vendor-issued certification.</div>
 
           <div class="cert-levels">
             ${LEVELS.map(l => `<span class="cert-level-tag" style="color:${l.color};border-color:${l.color};background:${l.bg}">L${l.id} ${l.label}</span>`).join('')}

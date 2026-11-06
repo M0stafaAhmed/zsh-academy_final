@@ -1268,3 +1268,14 @@ body.cert-unlocked .cert-locked-notice { display: none; }
 #sidebar.collapsed .progress-ring-wrap { padding: 0.7rem 0.5rem; }
 #sidebar.collapsed .level-header { padding: 0.55rem 0.6rem; justify-content: center; }
 #sidebar.collapsed .level-toggle-icon { display: none; }
+
+/* Certificate status disclaimer */
+.cert-disclaimer {
+  margin: 1rem auto 0;
+  max-width: 560px;
+  color: #717d8b;
+  font-size: 0.68rem;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
