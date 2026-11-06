@@ -1,0 +1,25 @@
+# Firebase local files
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+
+# Dependencies and generated output
+node_modules/
+dist/
+coverage/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs, caches, editor and OS files
+*.log
+*.tmp
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
